@@ -8,7 +8,6 @@
             if (array_key_exists('delete_file', $_POST)) {
                 $filename = $_POST['delete_file'];
                 echo $filename;
-//                die();
                 if (file_exists($filename)) {
                     rmdir($filename);
                     unlink($filename);

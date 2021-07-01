@@ -8,7 +8,6 @@
       }
     
         public  function ttest (){
-            
             $this -> view("image_upload");
             $this -> view("rend", $_GET['page'] ?? '');
         }

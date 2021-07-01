@@ -28,7 +28,6 @@ class upload  {
                 $allowedFileExtensions = ['jpg','jpeg','png',];
                 
                 if(in_array($fileExtension, $allowedFileExtensions)){
-//                    $uploadFileDir = './upload/';
                     
                     if (!file_exists($uploadFileDir)){
                         mkdir($uploadFileDir,0777,TRUE);
