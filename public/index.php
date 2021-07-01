@@ -1,5 +1,13 @@
 <?php
 require '../vendor/autoload.php';
-require '../Core/init.php';
 
-$app = new Core\App();
+    if (isset($_GET['page'])){
+        $GLOBALS['gallery'] = new \App\Controller\Load('./upload/' . $_GET['page'] . '/' ?? '', 4);
+    }
+    else{
+        $GLOBALS['gallery'] = new \App\Controller\Load('./upload/', 4);
+    }
+    
+    $app = new Core\App();
+    $gallery = $GLOBALS['gallery'];
+    var_dump($gallery);

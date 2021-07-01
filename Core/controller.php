@@ -8,5 +8,4 @@ namespace Core;
              include "../App/View/" . $view . ".php";
          }
      }
-     
  }

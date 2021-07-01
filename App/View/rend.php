@@ -7,7 +7,7 @@
 
 <body>
 <?php
-    $gallery = new \App\Controller\Load('./upload/', 4);
+    $gallery = $GLOBALS['gallery'];
     $gallery->load();
     $gallery->render();
 ?>
