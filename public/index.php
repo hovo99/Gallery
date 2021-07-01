@@ -10,4 +10,3 @@ require '../vendor/autoload.php';
     
     $app = new Core\App();
     $gallery = $GLOBALS['gallery'];
-    var_dump($gallery);

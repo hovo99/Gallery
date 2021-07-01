@@ -1,25 +1,13 @@
 <?php
 
 namespace App\Controller;
-//use Core\App;
 
 class upload  {
-//public $uploadFileDir = './upload/' ;
-
 
     public function index () {
-//        echo Load::$filename;
-//        die();
-//        echo $filename = $_GET['asd'];
-//        var_dump($GLOBALS['gallery']->directory);
-//        echo "esia tpel";
-//        die();
-//        var_dump(2);
-//        var_dump($_GET);
+
         $uploadFileDir = $GLOBALS['gallery']->directory;
         echo $uploadFileDir;
-//        die();
-//        echo $asdasds;
         $files = new \App\Model\files();
         $post = new \App\Model\post();
         $session = new \App\Model\session();
@@ -67,8 +55,6 @@ class upload  {
     
     public function folder() {
         $uploadFileDir = $GLOBALS['gallery']->directory;
-//        var_dump($GLOBALS['gallery']->directory);
-//        die();
         $session = new \App\Model\session();
         $message = '';
 

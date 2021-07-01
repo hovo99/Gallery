@@ -20,7 +20,6 @@
             echo $this->directory;
             echo "<br>";
             echo $this->columns;
-//            die();
             $fileik = $this->directory . '/' ;
             $directory = dir($fileik);
             
