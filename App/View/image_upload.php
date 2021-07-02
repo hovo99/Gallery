@@ -16,11 +16,10 @@
         $session->remove('message');
     }
 ?>
-
 <form action="/upload/folder?page=<?php echo $_GET['page'] ?? '' ?>" method="post">
-    <h2>
+    <span>
         Create New Folder
-    </h2>
+    </span>
     <input name="createfolder" type="text">
     <input type="submit" value="Create Folder">
 </form>

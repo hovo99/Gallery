@@ -5,13 +5,13 @@ namespace App\Controller;
 class upload  {
 
     public function index () {
-
-        $uploadFileDir = $GLOBALS['gallery']->directory;
-        echo $uploadFileDir;
+        
         $files = new \App\Model\files();
         $post = new \App\Model\post();
         $session = new \App\Model\session();
         
+        $uploadFileDir = $GLOBALS['gallery']->directory;
+        $folder_dir = $GLOBALS['gallery']->folder_dir;
         $message = "";
         $uploadedFile ="uploadedFile";
         
@@ -43,20 +43,24 @@ class upload  {
                     $message = 'Upload failed. Allowed file types: ' . implode(', ', $allowedFileExtensions);
                 }
             } else {
-                $message = 'There is some error in the file upload. Please check the following error.<br>';
+                $message = 'There is some error in the file upload . <br>';
                 $fileErr = $files->get($uploadedFile, 'error');
                 $message .= 'Error:' . $fileErr;
             }
         }
-     $session->set('message', $message);
-    header('location: ../');
+        $session->set('message', $message);
+        if (empty($folder_dir)) {
+            header("Location: ../");
+        } else {
+            header("location: ../?page=" . $folder_dir);
+        }
     }
     
     public function folder() {
         $uploadFileDir = $GLOBALS['gallery']->directory;
+        $folder_dir = $GLOBALS['gallery']->folder_dir;
         $session = new \App\Model\session();
         $message = '';
-
         $folder_name = $_POST['createfolder'];
         
         if (!file_exists($folder_name))
@@ -65,6 +69,10 @@ class upload  {
             $message = $folder_name . " Folder Created";
         }
         $session->set('message', $message);
-        header('location: ../');
+        if (empty($folder_dir)) {
+            header("Location: ../");
+        } else {
+            header("location: ../?page=" . $folder_dir);
+        }
     }
     }
