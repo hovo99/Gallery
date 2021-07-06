@@ -24,7 +24,7 @@ class upload  {
                 
                 $fileNameCmps = explode(".", $fileName);
                 $fileExtension = strtolower(end($fileNameCmps));
-                $newFileName = time(). $fileName. '.'.$fileExtension;
+                $newFileName = time(). $fileName[0]. '.'.$fileExtension;
                 $allowedFileExtensions = ['jpg','jpeg','png',];
                 
                 if(in_array($fileExtension, $allowedFileExtensions)){
@@ -70,7 +70,7 @@ class upload  {
         }
         $session->set('message', $message);
         if (empty($folder_dir)) {
-            header("Location: ../");
+            header("Location: ..");
         } else {
             header("location: ../?page=" . $folder_dir);
         }
