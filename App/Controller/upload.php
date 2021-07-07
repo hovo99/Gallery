@@ -70,9 +70,10 @@ class upload  {
         }
         $session->set('message', $message);
         if (empty($folder_dir)) {
-            header("Location: ..");
+            header("Location: ../");
         } else {
             header("location: ../?page=" . $folder_dir);
+            
         }
     }
     }

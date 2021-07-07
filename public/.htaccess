@@ -1,11 +1,7 @@
 AddDefaultCharset utf-8
-#Options +FollowSymLinks -MultiViews
 RewriteEngine on
 RewriteBase /
-#RewriteRule ^css/(.*)$ App/Content/$1 [NC,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME} !\.(css)$
-#RewriteRule ^(.*)$ index.php
-RewriteRule ^(.*) index.php?go=$1
+RewriteRule ^(.*)$ index.php
 
